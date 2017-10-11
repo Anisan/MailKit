@@ -1413,7 +1413,7 @@ namespace MailKit.Net.Smtp {
 			var utf8 = (extensions & SmtpExtension.UTF8) != 0 ? " SMTPUTF8" : string.Empty;
 			var addrspec = GetAddrspec (options, mailbox);
 
-			var command = string.Format ("MAIL FROM:<{0}>{1}", addrspec, utf8);
+			var command = string.Format ("MAIL FROM:{0}", addrspec, utf8);
 
 			if ((extensions & SmtpExtension.BinaryMime) != 0)
 				command += " BODY=BINARYMIME";
@@ -1524,7 +1524,7 @@ namespace MailKit.Net.Smtp {
 
 		bool RcptTo (FormatOptions options, MimeMessage message, MailboxAddress mailbox, CancellationToken cancellationToken)
 		{
-			var command = string.Format ("RCPT TO:<{0}>", GetAddrspec (options, mailbox));
+			var command = string.Format ("RCPT TO:{0}", GetAddrspec (options, mailbox));
 
 			if ((capabilities & SmtpCapabilities.Dsn) != 0) {
 				var notify = GetDeliveryStatusNotifications (message, mailbox);

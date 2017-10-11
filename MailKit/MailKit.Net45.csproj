@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -48,7 +48,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\submodules\MimeKit\MimeKit\MimeKit.Net45.csproj">
+    <ProjectReference Include="..\..\MimeKit\MimeKit\MimeKit.Net45.csproj">
       <Project>{D5F54A4F-D84B-430F-9271-F7861E285B3E}</Project>
       <Name>MimeKit.Net45</Name>
     </ProjectReference>
